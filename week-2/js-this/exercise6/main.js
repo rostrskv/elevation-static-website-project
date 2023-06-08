@@ -3,10 +3,10 @@ const coffeeShop = {
     beans: 40,
 
     drinkRequirements: {
-        latte: 10,
-        americano: 5,
-        doubleShot: 15,
-        frenchPress: 12
+        latte: { beanRequirement: 10, price: 5 },
+        americano: { beanRequirement: 5, price: 4 },
+        doubleShot: { beanRequirement: 15, price: 10 },
+        frenchPress: { beanRequirement: 12, price: 10 }
     },
 
     money: 1000,
@@ -18,12 +18,20 @@ const coffeeShop = {
             console.log("Sorry, we don't make ", drinkType);
             return;
         }
-        if (this.drinkRequirements[drinkType] > this.beans) {
+        if (this.drinkRequirements[drinkType].beanRequirement > this.beans) {
             console.log("Sorry, we’re all out of beans!");
             return;
         }
-        this.beans -= this.drinkRequirements[drinkType];
+        this.beans -= this.drinkRequirements[drinkType].beanRequirement;
         console.log("Here's your", drinkType);
+    },
+    buyDrink: function (drinkType) {
+        if (!this.drinkRequirements[drinkType]) {
+            console.log("Sorry, we don't make ", drinkType);
+            return;
+        }
+        this.money += this.drinkRequirements[drinkType].price;
+        this.makeDrink(drinkType);
     },
     buyBeans: function (numBeans) {
         const totalPrice = numBeans * this.beanPrice;
@@ -37,11 +45,11 @@ const coffeeShop = {
     }
 }
 
-coffeeShop.makeDrink("latte");
-coffeeShop.makeDrink("americano");
-coffeeShop.makeDrink("filtered"); //should alert/console "Sorry, we don't make filtered"
-coffeeShop.makeDrink("doubleShot");
-coffeeShop.makeDrink("frenchPress"); //should alert/console "Sorry, we're all out of beans"
+coffeeShop.buyDrink("latte");
+coffeeShop.buyDrink("americano");
+coffeeShop.buyDrink("filtered"); //should alert/console "Sorry, we don't make filtered"
+coffeeShop.buyDrink("doubleShot");
+coffeeShop.buyDrink("frenchPress"); //should alert/console "Sorry, we're all out of beans"
 coffeeShop.buyBeans(200);
 coffeeShop.buyBeans(20);
-coffeeShop.makeDrink("frenchPress");
+coffeeShop.buyDrink("frenchPress");
