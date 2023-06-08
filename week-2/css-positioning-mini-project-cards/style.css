@@ -1,0 +1,43 @@
+body {
+    background-color: green;
+}
+
+.card {
+    position: relative;
+    background-color: white;
+    border: 1px solid gray;
+    border-radius: 20px;
+    width: 240px;
+    height: 360px;
+    margin-right: -120px;
+    display: inline-block; 
+}
+
+.small {
+    position: absolute;
+    font-size: 36px;
+    top: 20px;
+    left: 20px;
+    text-align: center;
+}
+
+.big {
+    font-size: 180px;
+    text-align: center;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.bottom-right {
+    position: absolute;
+    left: auto;
+    top: auto;
+    bottom: 20px;
+    right: 20px;
+    transform: rotate(180deg);
+}
+
+.red {
+    color: red
+}

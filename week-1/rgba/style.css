@@ -1,0 +1,23 @@
+#container {
+    position: relative;
+}
+
+#titles {
+    position: absolute;
+    top: 0px;
+}
+
+#titles > div {
+    padding: 20px;
+    font-size: larger;
+    font-weight: bolder;
+}
+
+.transparent {
+    background-color: rgba(138, 138, 138, 0.5);
+    color: rgba(0,0,0,0.5);
+}
+
+.opaque {
+    background-color: purple;
+}
