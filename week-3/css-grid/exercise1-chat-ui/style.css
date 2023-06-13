@@ -1,0 +1,89 @@
+/* div {
+    border: 1px solid black
+} */
+
+#container {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    grid-template-rows: 12fr 1fr;
+    font-family: sans-serif;
+    grid-template-areas:
+        "s m"
+        "s c";
+}
+
+#sidebar {
+    display: grid;
+    grid-area: s;
+    background-color: #8e44ab;
+}
+
+#sidebar-header {
+    padding: 4px;
+}
+
+#friends-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 20px;
+    padding: 4px;
+}
+
+
+.friend {
+    background-color: #9b59b4;
+    border-radius: 2px;
+}
+
+#messages-container {
+    grid-area: m;
+    background-color: #ebeff0;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 20px;
+    padding: 4px;
+}
+
+.message {
+    padding: 4px;
+    display: grid;    
+    grid-template-columns: max-content 1fr;
+    grid-gap: 10px;
+    border-radius: 4px;
+    font-family: cursive;
+}
+
+.message-time {
+    font-size: xx-small;
+    justify-self: end;
+    align-self:flex-end;
+}
+
+.other {
+    display: grid;
+    background-color: #bcc2c6;
+    justify-self: start;
+}
+
+.my {
+    display: grid;
+    background-color: #2acb72;
+    justify-self: end;
+}
+
+#compose {
+    display: grid;
+    grid-area: c;
+    grid-template-columns: auto 80px;
+}
+
+#text-input {
+    border: 1px solid gray;
+}
+
+#send-button {
+    border: none;
+    background-color: #8e44ab;
+    color: white;
+    text-transform: uppercase;
+}
