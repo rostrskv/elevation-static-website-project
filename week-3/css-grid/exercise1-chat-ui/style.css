@@ -26,7 +26,6 @@ body {
 
 #friends-container {
     display: grid;
-    grid-template-columns: 1fr;
     grid-gap: 20px;
     padding: 4px;
 }
@@ -41,7 +40,6 @@ body {
     grid-area: m;
     background-color: #ebeff0;
     display: grid;
-    grid-template-columns: 1fr;
     grid-gap: 20px;
     padding: 4px;
 }
@@ -49,7 +47,7 @@ body {
 .message {
     padding: 4px;
     display: grid;
-    grid-template-columns: max-content 1fr;
+    grid-template-columns: auto 1fr;
     grid-gap: 10px;
     border-radius: 4px;
     font-family: cursive;
@@ -76,7 +74,7 @@ body {
 #compose {
     display: grid;
     grid-area: c;
-    grid-template-columns: auto 80px;
+    grid-template-columns: auto min-content;
 }
 
 #text-input {
@@ -88,4 +86,5 @@ body {
     background-color: #8e44ab;
     color: white;
     text-transform: uppercase;
+    padding: 1em;
 }
