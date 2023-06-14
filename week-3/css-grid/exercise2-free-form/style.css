@@ -1,0 +1,67 @@
+body {
+    margin: 0;
+    padding: 0
+}
+
+* {
+    font-family: sans-serif;
+    color: darkblue
+}
+
+div {
+    border: 1px solid darkblue;
+}
+
+#container {
+    display: grid;
+    grid-template-areas:
+        "l n"
+        "c c"
+        "f f"
+    ;
+    grid-template-columns: auto 1fr;
+}
+
+#logo {
+    padding: 0.5rem;
+    grid-area: l;
+    font-size: 2rem;
+}
+
+#navigation {
+    grid-area: n;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+#content {
+    grid-area: c;
+    display: grid;
+    gap: 1rem;
+    padding: 1rem;
+    grid-template-areas:
+        "ab ar n1"
+        "ab ar n2";
+    grid-template-columns: 1fr 8fr 4fr;
+}
+
+#abcds {
+    grid-area: ab;
+}
+#article {
+    grid-area: ar;
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+#news1 {
+    grid-area: n1;
+}
+#news2 {
+    grid-area: n2;
+}
+
+#footer {
+    display: grid;
+    grid-area: f;
+    justify-content: end;
+}
