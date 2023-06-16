@@ -1,0 +1,31 @@
+label {
+    display: block;
+}
+
+form {
+    background-color: #1abc9c;
+    padding: 1rem;
+    font-family: sans-serif;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    justify-content: space-around;
+}
+
+.full-width {
+    grid-column: 1 / -1;
+}
+
+.group {
+    display: grid;
+}
+
+#submit {
+    justify-self: start;
+}
+
+#error-message {
+    background-color: lightgray;
+    padding: 0.5rem;
+    display: none;
+}

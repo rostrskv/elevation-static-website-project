@@ -22,11 +22,15 @@ const validate = function () {
         }
         return errors
     }
-    errorMessage.innerHTML = getValidationMessage(
+    
+    const message = getValidationMessage(
         document.getElementById("name").value,
         document.getElementById("salary").valueAsNumber,
         document.getElementById("birthday").valueAsDate,
         document.getElementById("phone").value,
     ).join("<br>")
+    errorMessage.innerHTML = message;
+    errorMessage.style.display = message?.length > 0 ? "block" : "none";
+    return false
 }
 button.onclick = validate

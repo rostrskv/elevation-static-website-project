@@ -5,28 +5,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <div id="form">
+        <form>
+            <div class="group full-width" >
+                <label for="name">Name</label>
+                <input type="text" name="name" id="name">
+            </div>
+            <div class="group">
+                <label for="salary">Desired Salary</label>
+                <input type="number" name="salary" id="salary">
+            </div>
+            <div class="group">
+                <label for="birthday">Birthday</label>
+                <input type="date" name="birthday" id="birthday">
+            </div>
+            <div class="group full-width">
+                <label for="phone">Phone</label>
+                <input type="tel" name="phone" id="phone">
+            </div>
+            <div class="group full-width">
+                <input type="submit" id="submit" name="submit">
+            </div>
 
-        <label for="name">Name</label>
-        <input type="text" name="name" id="name">
-
-        <label for="salary">Desired Salary</label>
-        <input type="number" name="salary" id="salary">
-
-        <label for="birthday">Birthday</label>
-        <input type="date" name="birthday" id="birthday">
-
-        <label for="phone">Phone</label>
-        <input type="tel" name="phone" id="phone">
-
-        <button id="submit" name="submit">Submit</button>
-
-        <div id="error-message"></div>
-    </div>
+            <div id="error-message" class="full-width"></div>
+        </form>
+    
     <script src="main.js"></script>
+
 </body>
 
 </html>
