@@ -7,6 +7,7 @@
     --gray: #7a8cad;
     --backround: #fefefe;
     --pink-background: #fff7f9;
+    --dark-background: #102441;
 }
 
 body {
@@ -14,17 +15,35 @@ body {
     box-sizing: border-box;
     background-color: white;
     color: var(--dark);
+    display: grid;
+    grid-template-columns: 1fr min(1200px, 100%) 1fr;
+
+    justify-items: center;
 }
 
+body>* {
+    grid-column: 2;
+    /* border: 1px solid green; */
+    width: 100%;
+    margin: 20px auto;
+}
 
 #logo {
     font-weight: 600;
     font-size: 32px;
     color: var(--pink);
+    margin: 8px 32px;
 }
 
 nav {
-    display: flex;
+    grid-column: 1 / 4;
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    width: 1400px;
+}
+
+.main-menu {
+    grid-column: 3;
 }
 
 .menu,
@@ -46,6 +65,13 @@ nav {
     padding: 0;
     display: none;
     box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.2);
+    background-color: white;
+}
+
+.lang-menu ul {
+    right: 0px;
+    left: auto;
+    width: 200px;
 }
 
 .menu ul li {
@@ -85,36 +111,202 @@ nav a:visited {
     vertical-align: top;
 }
 
-.partners {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));
-    gap: 5px;
-    grid-auto-flow: dense;
-    justify-items: center;
-    justify-content: center;
+h4 {
+    font-size: 17px;
+    font-weight: 600;
+    font-style: italic;
 }
 
-.partners img {
-    height: 2rem;
+.partners {
+    display: grid;
+    justify-items: center;
+}
+
+.partners-imgs {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5px;
+    justify-items: center;
+}
+
+.partners-imgs img {
+    height: 50px;
 
 }
 
 h1 {
     font-size: 64px;
+    margin-bottom: 0;
 }
 
 h1+p {
     font-size: 25px;
     font-weight: 500;
 }
-img.circular{
+
+
+
+img.circular {
     height: 70px;
     clip-path: circle();
 }
-.cards-2{
+
+.cards-2 {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    gap: 50px;
 }
-.testimonial{
+
+.cards-2>div {
     display: grid;
+    justify-items: left;
+}
+
+.pink-button,
+.pink-button:link,
+.pink-button:visited {
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    background-color: var(--pink);
+    border-style: solid;
+    border-width: 0;
+    border-radius: 50px;
+    padding: 20px 30px;
+    margin: 10px;
+}
+
+.pink-button:hover {
+    padding: 30px 40px;
+    margin: 0;
+}
+
+.testimonial {
+    display: grid;
+    grid-template-columns: min-content 1fr;
+    grid-auto-rows: min-content;
+    gap: 20px;
+    background-color: var(--pink-background);
+    height: calc(100% - 2 * 20px);
+    justify-items: left;
+    align-content: top;
+    padding: 20px;
+
+}
+
+.testimonial>.quote {
+    grid-column: span 2;
+    font-size: 22px;
+    text-align: center;
+}
+
+.testimonial>img {
+    grid-column: span 1;
+}
+
+.testimonial-name {
+    font-weight: 700;
+}
+
+.fullbleed {
+    background-color: var(--dark-background);
+    grid-column: 1 / 4;
+    width: 100%;
+    display: grid;
+    justify-content: center;
+    padding: 50px 0;
+}
+
+.video {
+    width: 816px;
+    height: 460px;
+}
+
+
+.enhance-left {
+    grid-column: 1;
+    background-color: #F4F8FC;
+}
+
+.enhance-right {
+    grid-column: 3;
+    background-color: #F4F8FC;
+}
+
+.enhance {
+    justify-self: center;
+    background-color: #F4F8FC;
+}
+
+.enhance>h1 {
+    text-align: center;
+    font-size: 50px;
+}
+
+.enhance>h3 {
+    text-align: center;
+    font-size: 30px;
+    color: var(--pink);
+}
+
+
+.carousel {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 20px;
+
+}
+
+/* TODO: text colors/sizes */
+.carousel>.carousel-card {
+    background-color: white;
+    display: grid;
+    justify-items: center;
+    text-align: center;
+}
+
+.carousel>.carousel-card>img {
+    width: 100px;
+}
+
+.color-buttons {
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    gap: 10px;
+    justify-content: space-around;
+
+}
+
+.color-button,
+.color-button:link,
+.color-button:visited {
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    background-color: var(--pink);
+    border-style: solid;
+    border-width: 0;
+    border-radius: 38px;
+    padding: 20px;
+}
+
+.color-button:nth-child(1),
+.color-button:nth-child(1):link,
+.color-button:nth-child(1):visited {
+    background-color: var(--dark);
+
+}
+
+.color-button:nth-child(3),
+.color-button:nth-child(3):link,
+.color-button:nth-child(3):visited {
+    background-color: #247DFF;
+}
+.color-button:nth-child(4),
+.color-button:nth-child(4):link,
+.color-button:nth-child(4):visited {
+    background-color: #A9B8D3;
 }
