@@ -13,13 +13,13 @@ body {
     font-family: "Montserrat", sans-serif;
     box-sizing: border-box;
     background-color: white;
+    color: var(--dark);
 }
 
 
 #logo {
     font-weight: 600;
-    font-size: 2rem;
-    
+    font-size: 32px;
     color: var(--pink);
 }
 
@@ -30,6 +30,7 @@ nav {
 .menu,
 .menu ul {
     list-style: none;
+    font-size: 17px;
 }
 
 .menu li {
@@ -44,7 +45,8 @@ nav {
     width: 200px;
     padding: 0;
     display: none;
-    box-shadow: 0 0 1rem 0 rgba(0,0,0,0.2);}
+    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.2);
+}
 
 .menu ul li {
     float: none;
@@ -63,11 +65,11 @@ nav a:visited {
 }
 
 .menu li:hover {
-     color:var(--pink-accent); 
+    color: var(--pink-accent);
 }
 
 .menu a:hover {
-    color:var(--pink-accent);
+    color: var(--pink-accent);
 }
 
 .menu li:hover ul {
@@ -78,11 +80,41 @@ nav a:visited {
 /* .menu>li:has(ul)>a::after 
 .menu a[href='#']::after 
 */
-.chevron::after{
+.chevron::after {
     content: " ⌵";
-vertical-align: top;
+    vertical-align: top;
 }
 
-.emoji {
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+.partners {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));
+    gap: 5px;
+    grid-auto-flow: dense;
+    justify-items: center;
+    justify-content: center;
+}
+
+.partners img {
+    height: 2rem;
+
+}
+
+h1 {
+    font-size: 64px;
+}
+
+h1+p {
+    font-size: 25px;
+    font-weight: 500;
+}
+img.circular{
+    height: 70px;
+    clip-path: circle();
+}
+.cards-2{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.testimonial{
+    display: grid;
 }
