@@ -8,6 +8,7 @@
     --backround: #fefefe;
     --pink-background: #fff7f9;
     --dark-background: #102441;
+    --gray-background: #f4f8fc;
 }
 
 body {
@@ -211,12 +212,17 @@ img.circular {
 
 .fullbleed {
     background-color: var(--dark-background);
+}
+
+.fullbleed,
+.fullbleed-pink {
     grid-column: 1 / 4;
     width: 100%;
     display: grid;
     justify-content: center;
     padding: 50px 0;
 }
+
 
 .video {
     width: 816px;
@@ -393,5 +399,55 @@ img.circular {
 
 .webinar:nth-child(3) .webinar-img {
     background-image: url(assets/3.jpeg);
+}
 
+.fullbleed-pink {
+    background-color: var(--pink-background);
+}
+
+
+.fullbleed-pink>.testimonial {
+    justify-items: center;
+    justify-content: space-around;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.fullbleed-pink>.testimonial>.quote {
+    background-color: white;
+    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    grid-column: span 3;
+    width: 850px;
+}
+
+.fullbleed-pink>.testimonial img {
+    justify-self: right;
+}
+
+.programs {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.program {
+    background-color: var(--gray-background);
+    font-size: 20px;
+    padding: 20px;
+}
+
+.program>img {
+    height: 83px;
+}
+
+.program h4 {
+    font-style: normal;
+    font-size: 20px;
+}
+
+.program a:link,
+.program a:visited {
+    display: block;
+    text-align: left;
+    color: var(--pink);
 }
