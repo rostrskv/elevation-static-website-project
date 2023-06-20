@@ -18,13 +18,11 @@ body {
     color: var(--dark);
     display: grid;
     grid-template-columns: 1fr min(1200px, 100%) 1fr;
-
     justify-items: center;
 }
 
 body>* {
     grid-column: 2;
-    /* border: 1px solid green; */
     width: 100%;
     margin: 20px auto;
 }
@@ -37,6 +35,7 @@ body>* {
 }
 
 nav {
+    position: sticky;
     grid-column: 1 / 4;
     display: grid;
     grid-template-columns: repeat(4, auto);
@@ -44,42 +43,38 @@ nav {
 }
 
 .main-menu {
-    grid-column: 3;
+    grid-auto-flow: column;
+    grid-auto-columns: max-content;
+    gap: 20px;
 }
 
-.menu,
-.menu ul {
+ul.menu,
+ul.menu ul {
     list-style: none;
     font-size: 17px;
 }
 
-.menu li {
-    float: left;
-    position: relative;
+ul.menu {
+    display: grid;
+    grid-auto-rows: 1fr;
 }
 
-.menu ul {
-    position: absolute;
-    top: 25px;
-    left: -1px;
-    width: 200px;
-    padding: 0;
+
+ul.menu ul {
     display: none;
-    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.2);
-    background-color: white;
-}
-
-.lang-menu ul {
-    right: 0px;
-    left: auto;
-    width: 200px;
-}
-
-.menu ul li {
-    float: none;
-    margin: 0;
+    /* display: grid;  */
+    position: absolute;
+    grid-auto-rows: 40px;
+    gap: 1.2px;
     padding: 0;
-    line-height: 15px;
+    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.2);
+    background-color: var(--pink-background);
+}
+
+ul.menu ul li {
+    display: grid;
+    background-color: white;
+    align-items: center;
 }
 
 nav a:link,
@@ -100,7 +95,7 @@ nav a:visited {
 }
 
 .menu li:hover ul {
-    display: block;
+    display: grid;
 }
 
 
