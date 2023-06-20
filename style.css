@@ -177,10 +177,10 @@ img.circular {
     margin: 10px;
 }
 
-.pink-button:hover {
+/* .pink-button:hover {
     padding: 30px 40px;
     margin: 0;
-}
+} */
 
 .testimonial {
     display: grid;
@@ -305,8 +305,93 @@ img.circular {
 .color-button:nth-child(3):visited {
     background-color: #247DFF;
 }
+
 .color-button:nth-child(4),
 .color-button:nth-child(4):link,
 .color-button:nth-child(4):visited {
     background-color: #A9B8D3;
+}
+
+#hr_leaders {
+    background-color: #0f213a;
+    background-image: url(img/joseph-frank-XGC_1eH_ZGI-unsplash_darkblue-scaled-4-1024x683.jpg);
+    background-size: cover;
+    background-position-y: -300px;
+    display: grid;
+    justify-items: center;
+
+}
+
+#hr_leaders>* {
+    color: white;
+}
+
+#resources {
+    display: grid;
+    justify-items: center;
+}
+
+.pink {
+    color: var(--pink);
+}
+
+#webinars {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.float-button {
+    font-size: 12px;
+    font-weight: bold;
+    color: white;
+    background-color: var(--pink);
+    border-style: solid;
+    border-width: 0;
+    border-radius: 50px;
+    padding: 7px 14px;
+}
+
+.webinar {
+    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.2);
+}
+
+.webinar>img {
+    width: 100%;
+    display: none;
+}
+
+.webinar div {
+    padding: 12px;
+}
+
+.webinar p {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.webinar a:link,
+.webinar a:visited {
+    display: block;
+    text-align: left;
+    text-decoration: none;
+    color: var(--pink);
+    padding: 5px;
+}
+
+.webinar-img {
+    background-image: url(assets/1.jpeg);
+    background-size: cover;
+    height: 250px;
+    padding: 20px 5px;
+}
+
+.webinar:nth-child(2) .webinar-img {
+    background-image: url(assets/2.jpeg);
+
+}
+
+.webinar:nth-child(3) .webinar-img {
+    background-image: url(assets/3.jpeg);
+
 }
