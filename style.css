@@ -254,7 +254,7 @@ img.circular {
 
 .carousel {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     gap: 20px;
     padding: 20px;
 
@@ -445,4 +445,19 @@ img.circular {
     display: block;
     text-align: left;
     color: var(--pink);
+}
+
+@media(max-width: 768px) {
+    .cards-2 {
+        grid-template-columns: 1fr;
+    }
+
+    .video {
+        width: 100vw;
+    }
+
+    .main-menu {
+        grid-auto-flow: column;
+    }
+
 }
